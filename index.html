@@ -1,14 +1,26 @@
-<head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117121055-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Kiwi GA Playground</title>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117121055-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
 
-	  gtag('config', 'UA-117121055-1');
-	</script>
-</head>
-<body>
-	<h1>hello kiwi</h1>
-</body>
+		  gtag('config', 'UA-117121055-1');
+		</script>
+	</head>
+	<body>
+		<div>
+			<h1>hello kiwi</h1>
+		</div>
+		<div>
+			<a href="page2.html">Page 2</a> 
+			<a href="http://line.naver.jp/R/msg/text/?嗨 https://woodyf.github.io/" onclick="ga('send','event','測試頁面','line分享','點了就會line分享','4');"><img src="https://cdn2.ettoday.net/images/1756/d1756296.jpg">
+			</a>
+		</div>
+	</body>
+</html>
