@@ -3,14 +3,38 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Kiwi GA Playground</title>
+		<!-- scroll percentage -->
+		<script src="bam-percent-page-viewed.js" type="text/javascript"></script>
+
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117121055-1"></script>
-		<script>
+		<script type="text/javascript">
 		  window.dataLayer = window.dataLayer || [];
 		  function gtag(){dataLayer.push(arguments);}
 		  gtag('js', new Date());
 
 		  gtag('config', 'UA-117121055-1');
+		  var callbackData = bamPercentPageViewed.callback();
+		  if(callbackData != false){
+  			console.group('Callback');
+			console.log(callbackData);
+  			console.groupEnd();
+			gtag('event', callbackData.documentLocation, {
+			  'event_category': '頁面瀏覽深度',
+			  'event_label': callbackData.scrollPercent+'',
+			  'value': undefined
+			});
+		  }
+  			(function() {
+  				var o=onload, n=function(){
+				bamPercentPageViewed.init({
+				trackDelay : '2000',
+				percentInterval : '10'
+			});
+		  }
+		  if (typeof o!='function'){onload=n} else { onload=function(){ n();o();}}
+		})
+  			(window);
 		</script>
 	</head>
 	<body>
