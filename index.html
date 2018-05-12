@@ -45,7 +45,7 @@
 			<a href="https://woodyf.github.io/page2.html?utm_source=%E8%87%AA%E5%AE%B6%E5%AE%98%E7%B6%B2&utm_medium=%E6%96%87%E5%AD%97%E9%80%A3%E7%B5%90&utm_campaign=%E7%AC%AC%E4%BA%8C%E9%A0%81%E4%BF%83%E9%8A%B7&utm_content=%E8%97%8D%E8%89%B2%E6%96%87%E5">Page 2</a> 
 			<a href="http://line.naver.jp/R/msg/text/?嗨 https://woodyf.github.io/" onclick="gtag('event','line分享',{'event_category': '測試頁面',
 			'event_label': '點了就會line分享',
-			'value':'4'});"><img src="https://cdn2.ettoday.net/images/1756/d1756296.jpg">
+			'value':'4'});"><img src="https://cdn2.ettoday.net/images/1756/d1756296.jpg" id="001">
 			</a>
 		</div>
 		<div>
@@ -94,4 +94,24 @@
 			<h1>hello kiwi16</h1>
 		</div>
 	</body>
+	<script>
+		var delay = function (elem, callback) {
+			var timeout = null;
+			elem.onmouseover = function() {
+				// Set timeout to be a timer which will invoke callback after 1s
+				timeout = setTimeout(callback, 3000);
+			};
+			elem.onmouseout = function() {
+				// Clear any timers set to timeout
+				clearTimeout(timeout);
+			}
+		};
+		delay(document.getElementById('001'), function() {
+			gtag('event', '游標停留', {
+			  'event_category': '相機頁面',
+			  'event_label': '熊大抽煙',
+			  'value': '50'
+			});
+		});
+	</script>
 </html>
